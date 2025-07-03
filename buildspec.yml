@@ -4,12 +4,12 @@ phases:
   pre_build:
     commands:
       - echo Logging into Amazon ECR...
-      - aws ecr get-login-password | docker login --username AWS --password-stdin <your_account_id>.dkr.ecr.<region>.amazonaws.com
+      - aws ecr get-login-password | docker login --username AWS --password-stdin 277707114497.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
       - echo Building the Docker image...
       - docker build -t vite-react-app .
-      - docker tag vite-react-app:latest <your_account_id>.dkr.ecr.<region>.amazonaws.com/vite-react-app:latest
+      - docker tag vite-react-app:latest 277707114497.dkr.ecr.us-east-1.amazonaws.com/vite-react-app:latest
   post_build:
     commands:
       - echo Pushing the Docker image...
