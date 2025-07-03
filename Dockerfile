@@ -1,5 +1,5 @@
 # Stage 1: Build
-FROM public.ecr.aws/docker/library/node:18 AS build
+FROM public.ecr.aws/docker/library/node:16 AS build
 WORKDIR /app
 COPY . .
 RUN npm install
