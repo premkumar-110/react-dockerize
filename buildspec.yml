@@ -14,6 +14,10 @@ phases:
     commands:
       - echo Pushing the Docker image...
       - docker push 277707114497.dkr.ecr.us-east-1.amazonaws.com/vite-react-app:latest
-
+      - echo Writing image definitions file...
+      - |
+        printf '[{"name":"react-dockerize","imageUri":"%s"}]' \
+        277707114497.dkr.ecr.us-east-1.amazonaws.com/vite-react-app:latest > imagedefinitions.json
 artifacts:
-  files: '**/*'
+  files:
+    - imagedefinitions.json
